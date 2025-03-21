@@ -28,20 +28,20 @@ export default function Footer() {
           <div>
             <h4 className="font-serif text-lg mb-6">Navigation</h4>
             <ul className="space-y-3">
-              <FooterLink href="/collections">Collections</FooterLink>
-              <FooterLink href="/lookbook">Lookbook</FooterLink>
-              <FooterLink href="/about">About</FooterLink>
-              <FooterLink href="/contact">Contact</FooterLink>
+              <FooterLink to="/collections">Collections</FooterLink>
+              <FooterLink to="/lookbook">Lookbook</FooterLink>
+              <FooterLink to="/about">About</FooterLink>
+              <FooterLink to="/contact">Contact</FooterLink>
             </ul>
           </div>
           
           <div>
             <h4 className="font-serif text-lg mb-6">Customer Care</h4>
             <ul className="space-y-3">
-              <FooterLink href="/faq">FAQ</FooterLink>
-              <FooterLink href="/shipping">Shipping & Returns</FooterLink>
-              <FooterLink href="/care">Garment Care</FooterLink>
-              <FooterLink href="/size-guide">Size Guide</FooterLink>
+              <FooterLink to="/faq">FAQ</FooterLink>
+              <FooterLink to="/shipping">Shipping & Returns</FooterLink>
+              <FooterLink to="/care">Garment Care</FooterLink>
+              <FooterLink to="/size-guide">Size Guide</FooterLink>
             </ul>
           </div>
           
@@ -107,15 +107,15 @@ function SocialIcon({ Icon, label }: { Icon: React.ElementType; label: string })
   );
 }
 
-function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
+function FooterLink({ to, children }: { to: string; children: React.ReactNode }) {
   return (
     <li>
-      <a 
-        href={href} 
+      <Link 
+        to={to} 
         className="text-arden-cream/70 hover:text-arden-cream font-light transition-colors"
       >
         {children}
-      </a>
+      </Link>
     </li>
   );
 }

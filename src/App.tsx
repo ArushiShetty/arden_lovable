@@ -6,6 +6,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
+import Collections from "./pages/Collections";
+import Lookbook from "./pages/Lookbook";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -38,6 +40,8 @@ const AppRoutes = () => {
     <PageTransition>
       <Routes location={location}>
         <Route path="/" element={<Index />} />
+        <Route path="/collections" element={<Collections />} />
+        <Route path="/lookbook" element={<Lookbook />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>

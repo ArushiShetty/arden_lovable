@@ -34,8 +34,8 @@ export default function Header() {
       <div className="arden-container flex items-center justify-between">
         {/* Left navigation */}
         <nav className="hidden md:flex items-center space-x-10">
-          <NavLink href="/collections">Collections</NavLink>
-          <NavLink href="/lookbook">Lookbook</NavLink>
+          <NavLink to="/collections">Collections</NavLink>
+          <NavLink to="/lookbook">Lookbook</NavLink>
         </nav>
         
         {/* Mobile menu button */}
@@ -63,8 +63,8 @@ export default function Header() {
         
         {/* Right navigation */}
         <nav className="hidden md:flex items-center space-x-10">
-          <NavLink href="/about">About</NavLink>
-          <NavLink href="/contact">Contact</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
           <button className="relative">
             <ShoppingBag className="h-5 w-5" />
             <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-arden-navy text-arden-cream text-[10px] flex items-center justify-center">0</span>
@@ -77,10 +77,10 @@ export default function Header() {
           menuOpen ? 'translate-x-0' : 'translate-x-full'
         )}>
           <nav className="flex flex-col items-center space-y-8 p-8">
-            <NavLink href="/collections" onClick={() => setMenuOpen(false)}>Collections</NavLink>
-            <NavLink href="/lookbook" onClick={() => setMenuOpen(false)}>Lookbook</NavLink>
-            <NavLink href="/about" onClick={() => setMenuOpen(false)}>About</NavLink>
-            <NavLink href="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink>
+            <NavLink to="/collections" onClick={() => setMenuOpen(false)}>Collections</NavLink>
+            <NavLink to="/lookbook" onClick={() => setMenuOpen(false)}>Lookbook</NavLink>
+            <NavLink to="/about" onClick={() => setMenuOpen(false)}>About</NavLink>
+            <NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink>
             <Link to="/cart" onClick={() => setMenuOpen(false)} className="flex items-center space-x-2">
               <ShoppingBag className="h-5 w-5" />
               <span>Cart (0)</span>
@@ -92,14 +92,14 @@ export default function Header() {
   );
 }
 
-function NavLink({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void }) {
+function NavLink({ to, children, onClick }: { to: string; children: React.ReactNode; onClick?: () => void }) {
   return (
-    <a 
-      href={href} 
+    <Link 
+      to={to} 
       onClick={onClick}
       className="arden-hover-link font-sans text-sm uppercase tracking-widest transition-colors hover:text-arden-navy"
     >
       {children}
-    </a>
+    </Link>
   );
 }
