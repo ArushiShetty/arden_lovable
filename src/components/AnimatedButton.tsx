@@ -25,7 +25,7 @@ export default function AnimatedButton({
   rel,
   disabled,
   ...props
-}: AnimatedButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>) {
+}: AnimatedButtonProps & React.HTMLAttributes<HTMLElement>) {
   const baseClasses = 'inline-flex items-center justify-center font-medium transition-all duration-300 ease-custom relative overflow-hidden';
   
   const variantClasses = {
@@ -50,15 +50,27 @@ export default function AnimatedButton({
     className
   );
   
-  const Component = href ? 'a' : 'button';
-  
-  const componentProps = href
-    ? { href, target, rel, ...props }
-    : { onClick, disabled, ...props };
+  if (href) {
+    return (
+      <a 
+        href={href} 
+        target={target} 
+        rel={rel} 
+        className={buttonClasses}
+      >
+        <span className="relative z-10">{children}</span>
+      </a>
+    );
+  }
   
   return (
-    <Component className={buttonClasses} {...componentProps}>
+    <button 
+      className={buttonClasses} 
+      onClick={onClick} 
+      disabled={disabled} 
+      {...props}
+    >
       <span className="relative z-10">{children}</span>
-    </Component>
+    </button>
   );
 }

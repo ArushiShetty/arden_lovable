@@ -1,77 +1,115 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
+import { ArrowDown } from 'lucide-react';
 import TransitionWrapper from './TransitionWrapper';
 import AnimatedButton from './AnimatedButton';
 
 export default function Hero() {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Background elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-primary/5 blur-3xl animate-pulse-subtle" />
-        <div className="absolute bottom-1/3 left-1/3 w-64 h-64 rounded-full bg-primary/5 blur-3xl animate-float" />
-      </div>
+  // Initialize scroll trigger effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollElements = document.querySelectorAll('.scroll-trigger');
       
-      <div className="container-tight text-center">
-        <TransitionWrapper animation="fade-in" delay={300} className="mb-6">
-          <span className="inline-block py-1 px-3 text-xs font-medium bg-secondary text-secondary-foreground rounded-full">
-            Beautifully Crafted Products
-          </span>
-        </TransitionWrapper>
+      scrollElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
         
-        <TransitionWrapper animation="slide-up" delay={500} className="mb-6">
-          <h1 className="font-medium">
-            Experience True <br className="sm:hidden" />
-            <span className="relative inline-block">
-              Elegance
-              <span className="absolute -bottom-2 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary to-transparent"></span>
-            </span>
-          </h1>
-        </TransitionWrapper>
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.classList.add('visible');
+        }
+      });
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-arden-cream pt-16">
+      {/* Background elements */}
+      <div className="absolute top-0 left-0 w-1/2 h-full bg-arden-navy z-0"></div>
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-arden-beige z-0"></div>
+      
+      <div className="relative z-10 arden-container grid grid-cols-1 lg:grid-cols-2 gap-8 py-24">
+        <div className="flex flex-col justify-center text-arden-cream px-6 lg:px-12">
+          <TransitionWrapper animation="slide-up" delay={300} className="mb-4">
+            <div className="w-16 h-[1px] bg-arden-gold mb-8"></div>
+            <span className="inline-block font-serif italic">Autumn Collection 2023</span>
+          </TransitionWrapper>
+          
+          <TransitionWrapper animation="slide-up" delay={500} className="mb-6">
+            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-tight mb-4">
+              <span data-text="Timeless" className="text-glitch">Timeless</span>
+              <br />Elegance
+            </h1>
+          </TransitionWrapper>
+          
+          <TransitionWrapper animation="slide-up" delay={700} className="max-w-md mb-10">
+            <p className="text-arden-cream/80 font-light">
+              Crafted with precision and designed for those who appreciate the finer details. Our latest collection embodies the essence of old money aesthetic.
+            </p>
+          </TransitionWrapper>
+          
+          <TransitionWrapper animation="fade-in" delay={900}>
+            <div className="flex flex-wrap gap-4">
+              <AnimatedButton 
+                href="/collections" 
+                size="lg" 
+                className="arden-button bg-arden-cream text-arden-navy hover:bg-arden-gold hover:text-arden-cream"
+              >
+                Explore Collection
+              </AnimatedButton>
+              <AnimatedButton 
+                href="/lookbook" 
+                size="lg" 
+                className="arden-button border border-arden-cream text-arden-cream hover:bg-arden-cream/10"
+              >
+                View Lookbook
+              </AnimatedButton>
+            </div>
+          </TransitionWrapper>
+        </div>
         
-        <TransitionWrapper animation="slide-up" delay={700} className="max-w-2xl mx-auto mb-10">
-          <p className="text-lg sm:text-xl">
-            Discover our collection of thoughtfully designed products that blend minimalist aesthetics with exceptional functionality.
-          </p>
-        </TransitionWrapper>
-        
-        <TransitionWrapper animation="zoom-in" delay={900} className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-          <AnimatedButton size="lg">Explore Collection</AnimatedButton>
-          <AnimatedButton size="lg" variant="outline">Learn More</AnimatedButton>
-        </TransitionWrapper>
-        
-        <TransitionWrapper animation="fade-in" delay={1200} className="mt-16">
-          <div className="relative h-[40vh] sm:h-[50vh] max-h-[500px] w-full max-w-4xl mx-auto rounded-xl overflow-hidden glass p-2">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/40"></div>
-            {/* This would be replaced with an actual image */}
-            <div className="absolute inset-0 flex items-center justify-center text-foreground/40">
-              <p className="text-lg font-medium">Premium Product Display</p>
+        <div className="hidden lg:flex items-center justify-center overflow-hidden pl-12">
+          <div className="scroll-trigger relative h-[70vh] w-full overflow-hidden rounded-sm">
+            <div className="absolute inset-0 group cursor-pointer overflow-hidden">
+              {/* This would be replaced with an actual image */}
+              <div className="absolute inset-0 bg-arden-beige flex items-center justify-center">
+                <p className="text-lg font-serif text-arden-navy">Featured Collection Image</p>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-arden-navy/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute bottom-8 left-8 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                <h3 className="text-arden-cream font-serif text-2xl">Autumn Heritage</h3>
+                <p className="text-arden-cream/80 font-light">Sophisticated designs for the modern elite</p>
+              </div>
             </div>
           </div>
-        </TransitionWrapper>
+        </div>
       </div>
       
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center">
+      <div className="absolute bottom-8 left-0 right-0 flex justify-center z-10">
         <a 
-          href="#products" 
-          className="text-foreground/60 hover:text-foreground p-2 transition-colors"
-          aria-label="Scroll to products"
+          href="#collections" 
+          className="text-arden-cream p-2 transition-all hover:translate-y-1"
+          aria-label="Scroll to collections"
         >
-          <svg 
-            className="w-6 h-6 animate-float" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24" 
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2} 
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
+          <ArrowDown className="w-6 h-6 animate-float" />
         </a>
+      </div>
+      
+      {/* Marquee text */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden bg-arden-navy text-arden-cream py-3 z-10">
+        <div className="marquee-container">
+          <div className="marquee-content">
+            {Array(5).fill(
+              "ARDEN • TIMELESS ELEGANCE • SUSTAINABLE LUXURY • CRAFTED WITH PASSION • "
+            ).map((text, index) => (
+              <span key={index} className="mx-4 uppercase text-xs tracking-[0.3em] font-light">{text}</span>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,87 +1,71 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --background: 42 30% 94%;
+    --foreground: 215 60% 17%;
     
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card: 42 30% 96%;
+    --card-foreground: 215 60% 17%;
     
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover: 42 30% 96%;
+    --popover-foreground: 215 60% 17%;
     
-    --primary: 240 5% 10%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 215 60% 17%;
+    --primary-foreground: 42 30% 94%;
     
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
+    --secondary: 30 40% 83%;
+    --secondary-foreground: 215 60% 17%;
     
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted: 30 25% 88%;
+    --muted-foreground: 215 30% 40%;
     
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --accent: 42 40% 90%;
+    --accent-foreground: 215 60% 17%;
     
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 42 30% 94%;
     
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 10% 3.9%;
+    --border: 30 30% 80%;
+    --input: 30 30% 80%;
+    --ring: 215 60% 17%;
     
-    --radius: 0.75rem;
-    
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --radius: 0.25rem;
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: 215 60% 17%;
+    --foreground: 42 30% 94%;
     
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
+    --card: 215 50% 20%;
+    --card-foreground: 42 30% 94%;
     
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 215 50% 20%;
+    --popover-foreground: 42 30% 94%;
     
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
+    --primary: 30 40% 83%;
+    --primary-foreground: 215 60% 17%;
     
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 215 40% 25%;
+    --secondary-foreground: 42 30% 94%;
     
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 215 40% 25%;
+    --muted-foreground: 42 30% 80%;
     
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 215 40% 25%;
+    --accent-foreground: 42 30% 94%;
     
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 42 30% 94%;
     
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 215 40% 30%;
+    --input: 215 40% 30%;
+    --ring: 42 30% 88%;
   }
 }
 
@@ -101,7 +85,7 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-medium tracking-tight text-foreground;
+    @apply font-serif tracking-tight text-foreground;
   }
   
   h1 {
@@ -133,20 +117,49 @@
   .container-tight {
     @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+
+  /* Arden specific components */
+  .arden-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .arden-button {
+    @apply font-serif uppercase tracking-widest text-sm px-6 py-3 transition-all duration-300;
+  }
+  
+  .arden-navy-panel {
+    @apply bg-arden-navy text-arden-cream py-24;
+  }
+  
+  .arden-beige-panel {
+    @apply bg-arden-beige text-arden-navy py-24;
+  }
+
+  .arden-hover-link {
+    @apply relative inline-block after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-current after:origin-right after:scale-x-0 hover:after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300;
+  }
+
+  .marquee-container {
+    @apply overflow-hidden whitespace-nowrap relative w-full;
+  }
+  
+  .marquee-content {
+    @apply inline-block animate-marquee;
+  }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 4px;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-secondary/30;
+  @apply bg-arden-beige/30;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-muted-foreground/30 rounded-full transition-colors hover:bg-muted-foreground/50;
+  @apply bg-arden-navy/70 rounded-full transition-colors hover:bg-arden-navy;
 }
 
 /* Animations utility classes */
@@ -157,6 +170,87 @@
 }
 
 .animate-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* GEN-Z effect classes */
+.text-glitch {
+  position: relative;
+  display: inline-block;
+}
+
+.text-glitch::before,
+.text-glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.text-glitch::before {
+  @apply text-arden-gold;
+  left: 2px;
+  animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+
+.text-glitch::after {
+  @apply text-arden-navy;
+  left: -2px;
+  animation: glitch-anim2 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip-path: inset(40% 0 61% 0);
+  }
+  20% {
+    clip-path: inset(92% 0 1% 0);
+  }
+  40% {
+    clip-path: inset(43% 0 1% 0);
+  }
+  60% {
+    clip-path: inset(25% 0 58% 0);
+  }
+  80% {
+    clip-path: inset(54% 0 7% 0);
+  }
+  100% {
+    clip-path: inset(58% 0 43% 0);
+  }
+}
+
+@keyframes glitch-anim2 {
+  0% {
+    clip-path: inset(25% 0 58% 0);
+  }
+  20% {
+    clip-path: inset(54% 0 7% 0);
+  }
+  40% {
+    clip-path: inset(58% 0 43% 0);
+  }
+  60% {
+    clip-path: inset(40% 0 61% 0);
+  }
+  80% {
+    clip-path: inset(92% 0 1% 0);
+  }
+  100% {
+    clip-path: inset(43% 0 1% 0);
+  }
+}
+
+.scroll-trigger {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-trigger.visible {
   opacity: 1;
   transform: translateY(0);
 }

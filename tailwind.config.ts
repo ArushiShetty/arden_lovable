@@ -62,6 +62,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Arden brand colors
+				arden: {
+					'navy': '#0F2647',
+					'darkblue': '#1A3A64',
+					'blue': '#2D5F96',
+					'beige': '#E6D7C3',
+					'cream': '#F8F3EB',
+					'gold': '#D4AF37',
 				}
 			},
 			borderRadius: {
@@ -105,6 +114,19 @@ export default {
 				'pulse-subtle': {
 					'0%, 100%': { opacity: '1' },
 					'50%': { opacity: '0.8' }
+				},
+				'rotate-slow': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
+				'marquee': {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(-100%)' }
+				},
+				'letter-spacing': {
+					'0%': { letterSpacing: 'normal' },
+					'50%': { letterSpacing: '0.3em' },
+					'100%': { letterSpacing: 'normal' }
 				}
 			},
 			animation: {
@@ -116,12 +138,19 @@ export default {
 				'slide-down': 'slide-down 0.6s ease-out',
 				'zoom-in': 'zoom-in 0.6s ease-out',
 				'float': 'float 6s ease-in-out infinite',
-				'pulse-subtle': 'pulse-subtle 4s ease-in-out infinite'
+				'pulse-subtle': 'pulse-subtle 4s ease-in-out infinite',
+				'rotate-slow': 'rotate-slow 12s linear infinite',
+				'marquee': 'marquee 25s linear infinite',
+				'letter-spacing': 'letter-spacing 4s ease-in-out infinite'
 			},
 			transitionTimingFunction: {
 				'in-expo': 'cubic-bezier(0.95, 0.05, 0.795, 0.035)',
 				'out-expo': 'cubic-bezier(0.19, 1, 0.22, 1)',
 				'custom': 'cubic-bezier(0.6, 0.1, 0.3, 0.9)'
+			},
+			fontFamily: {
+				'serif': ['Playfair Display', 'serif'],
+				'sans': ['Montserrat', 'sans-serif'],
 			}
 		}
 	},
