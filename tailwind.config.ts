@@ -63,13 +63,15 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Arden brand colors
+				// Arden brand colors - updated for dark beige
 				arden: {
 					'navy': '#0F2647',
 					'darkblue': '#1A3A64',
 					'blue': '#2D5F96',
-					'beige': '#E6D7C3',
-					'cream': '#F8F3EB',
+					'beige': '#B39F7D',           // Darker beige
+					'cream': '#D9CCBA',           // Darker cream
+					'darkBeige': '#8C7A5B',       // New dark beige color
+					'lightBeige': '#E6D7C3',      // Original beige (keeping as light beige)
 					'gold': '#D4AF37',
 				}
 			},

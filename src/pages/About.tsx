@@ -11,7 +11,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-arden-cream">
+    <div className="min-h-screen flex flex-col bg-arden-darkBeige">
       <Header />
       <main>
         <HeroSection />
@@ -41,20 +41,20 @@ const HeroSection = () => {
 
 const StorySection = () => {
   return (
-    <section className="py-24 bg-arden-cream">
+    <section className="py-24 bg-arden-darkBeige">
       <div className="arden-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="scroll-trigger">
-            <span className="inline-block font-serif italic text-arden-navy/70 mb-4">Our Heritage</span>
-            <h2 className="font-serif text-4xl md:text-5xl text-arden-navy mb-6">A Commitment to Excellence</h2>
+            <span className="inline-block font-serif italic text-arden-cream/80 mb-4">Our Heritage</span>
+            <h2 className="font-serif text-4xl md:text-5xl text-arden-cream mb-6">A Commitment to Excellence</h2>
             <div className="w-16 h-[1px] bg-arden-gold mb-8"></div>
-            <p className="text-arden-navy/80 font-light mb-6">
+            <p className="text-arden-cream/90 font-light mb-6">
               Born from a passion for timeless design and exceptional craftsmanship, ARDEN was established with a simple yet profound mission: to create garments that transcend trends and embody the essence of old money aesthetic.
             </p>
-            <p className="text-arden-navy/80 font-light mb-6">
+            <p className="text-arden-cream/90 font-light mb-6">
               Our founder, with a background in traditional tailoring and a keen eye for detail, sought to bridge the gap between heritage techniques and contemporary sensibilities. The result is a brand that honors the past while embracing the present.
             </p>
-            <p className="text-arden-navy/80 font-light">
+            <p className="text-arden-cream/90 font-light">
               Each ARDEN piece is a testament to our commitment to quality, from the selection of premium materials to the meticulous finishing touches that distinguish our garments.
             </p>
           </div>

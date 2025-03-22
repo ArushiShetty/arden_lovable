@@ -20,16 +20,16 @@ const Collections = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-arden-cream">
+    <div className="min-h-screen flex flex-col bg-arden-darkBeige">
       <Header />
       <main>
-        <section className="pt-32 pb-24 bg-arden-cream">
+        <section className="pt-32 pb-24 bg-arden-darkBeige">
           <div className="arden-container">
             <div className="mb-12">
               <div className="flex items-center mb-8">
                 <AnimatedButton 
                   href="/" 
-                  className="flex items-center text-arden-navy hover:text-arden-gold"
+                  className="flex items-center text-arden-cream hover:text-arden-gold"
                   variant="ghost"
                   size="sm"
                 >
@@ -37,9 +37,9 @@ const Collections = () => {
                   Back to Home
                 </AnimatedButton>
               </div>
-              <h1 className="font-serif text-5xl md:text-6xl text-arden-navy mb-6">Our Collections</h1>
+              <h1 className="font-serif text-5xl md:text-6xl text-arden-cream mb-6">Our Collections</h1>
               <div className="w-16 h-[1px] bg-arden-gold mb-8"></div>
-              <p className="max-w-2xl text-arden-navy/70 font-light">
+              <p className="max-w-2xl text-arden-cream/90 font-light">
                 Explore our meticulously curated collections, each embodying the essence of timeless elegance
                 and refined luxury that defines the ARDEN experience.
               </p>
@@ -68,7 +68,7 @@ const Collections = () => {
             </div>
 
             <div className="py-16">
-              <h2 className="font-serif text-3xl text-arden-navy mb-10 text-center">Featured Items</h2>
+              <h2 className="font-serif text-3xl text-arden-cream mb-10 text-center">Featured Items</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {["Oxford Tailored Blazer", "Academy Trousers", "Silk Evening Shirt", "Merino Cardigan"].map((product, index) => (
                   <a 
@@ -85,8 +85,8 @@ const Collections = () => {
                         {/* This would be replaced with an actual image */}
                       </div>
                     </div>
-                    <h3 className="font-serif text-lg text-arden-navy">{product}</h3>
-                    <p className="text-arden-navy/70 font-light">$295.00</p>
+                    <h3 className="font-serif text-lg text-arden-cream">{product}</h3>
+                    <p className="text-arden-cream/80 font-light">$295.00</p>
                   </a>
                 ))}
               </div>
