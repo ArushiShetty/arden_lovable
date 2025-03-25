@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
@@ -39,7 +40,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-arden-darkBeige">
+    <div className="min-h-screen flex flex-col bg-arden-cream">
       <Header />
       <main>
         <Hero />

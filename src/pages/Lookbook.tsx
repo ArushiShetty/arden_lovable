@@ -18,7 +18,7 @@ const Lookbook = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-arden-darkBeige">
+    <div className="min-h-screen flex flex-col bg-arden-cream">
       <Header />
       <main>
         <section className="pt-32 pb-24 bg-arden-navy text-arden-cream">
